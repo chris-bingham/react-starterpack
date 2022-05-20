@@ -1,7 +1,10 @@
+@import "../../style/utils";
+
 .component {
-  color: red;
+  color: $c-h1;
+  @include font-sizes(--fs-h1, --lh-h1, $fs-h1-medium, $lh-h1-medium);
 
   span {
-    color: blue;
+    color: $c-h1-highlight;
   }
 }

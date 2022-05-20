@@ -18,10 +18,14 @@ Starting point for new React projects
 
 ## Includes
 
-- React
+- React (v17 -- waiting for SB to support 18)
 - Typescript
 - Storybooks
-- Jest testing (TODO)
+- SCSS Modules
+- ITCSS scaffolding (see src/style)
+- Jest testing
+- Eslint
+- Prettier
 - Hygen compomnent generation (TODO)
 - Bundled with parcel
 

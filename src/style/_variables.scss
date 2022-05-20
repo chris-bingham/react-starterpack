@@ -1,0 +1,28 @@
+// STATIC varaibles (don't change with context) can be sass variables (e.g. $variable-name)
+// BREAKPOINTS ($bp-)
+$bp-xs: 320px;
+$bp-s: 414px;
+$bp-m: 768px;
+$bp-l: 1024px;
+$bp-xl: 1200px;
+
+//colors - named relative to color
+$red: red;
+$blue: blue;
+
+// theme colours - named relative to use (should always use variables from colors above
+$c-h1: $red;
+$c-h1-highlight: $blue;
+
+// fontsizes (fs-) and line heights (lh-)
+$fs-h1-large: 100;
+$fs-h1-medium: 70;
+$fs-h1-small: 50;
+$lh-h1-large: 100;
+$lh-h1-medium: 70;
+$lh-h1-small: 50;
+
+// TYPOGRAPHY ($t-)
+$t: 16; // base font-size (used to calculate rem)
+$t-font-basic: Helvetica, Arial, serif;
+$t-font-accent: Garamond, Georgia, sans-serif;

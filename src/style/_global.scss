@@ -1,0 +1,32 @@
+// VARIABLES (that change with context e.g. breakpoint, etc) can use CSS custom property syntax
+
+@import "utils";
+
+:root {
+  --fs-h1: #{$fs-h1-small};
+  --lh-h1: #{$lh-h1-small};
+}
+
+// @media (min-width: $bp-s) {
+//   :root {
+//   }
+// }
+
+@media (min-width: $bp-m) {
+  :root {
+    --fs-h1: #{$fs-h1-medium};
+    --lh-h1: #{$lh-h1-medium};
+  }
+}
+
+@media (min-width: $bp-l) {
+  :root {
+    --fs-h1: #{$fs-h1-large};
+    --lh-h1: #{$lh-h1-large};
+  }
+}
+
+// @media (min-width: $bp-xl) {
+//   :root {
+//   }
+// }

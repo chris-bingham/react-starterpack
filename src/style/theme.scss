@@ -1,0 +1,13 @@
+/*
+    The theme, include styles for HTML tags
+*/
+
+@import "global";
+@import "print";
+
+html {
+  font-family: $t-font-basic;
+}
+
+h1 {
+}

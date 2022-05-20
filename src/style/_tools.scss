@@ -1,0 +1,93 @@
+@import "./variables";
+
+// some of these are from
+// rem fallback - credits: http://zerosixthree.se/
+@function calculateRem($size) {
+  $remSize: (#{$size} / #{$t});
+  @return calc(#{$remSize} * 1rem);
+}
+
+@function calculatePx($size) {
+  @return calc(#{$size} * 1px);
+}
+
+@mixin font-sizes($sizevar, $lhvar, $sizefallback, $lhfallback) {
+  @include remvar(font-size, $sizevar, $sizefallback);
+  @include remvar(line-height, $lhvar, $lhfallback);
+}
+
+@mixin font-size($size) {
+  font-size: calc((#{$size}) * 1px);
+  font-size: calculateRem($size);
+}
+
+@mixin line-height($size) {
+  line-height: calc((#{$size}) * 1px);
+  line-height: calculateRem($size);
+}
+
+@mixin letter-spacing($size) {
+  letter-spacing: calc((#{$size}) * 1px);
+  letter-spacing: calculateRem($size);
+}
+
+@mixin margin-bottom($var, $fallback) {
+  margin-bottom: calc((#{$fallback}) * 1px);
+  margin-bottom: calculateRem(var($var, $fallback));
+}
+
+@mixin margin-top($var, $fallback) {
+  margin-top: calc((#{$fallback}) * 1px);
+  margin-top: calculateRem(var($var, $fallback));
+}
+
+@mixin margin-left($var, $fallback) {
+  margin-left: calc((#{$fallback}) * 1px);
+  margin-left: calculateRem(var($var, $fallback));
+}
+
+@mixin margin-right($var, $fallback) {
+  margin-right: calc((#{$fallback}) * 1px);
+  margin-right: calculateRem(var($var, $fallback));
+}
+
+@mixin padding-bottom($var, $fallback) {
+  padding-bottom: calc((#{$fallback}) * 1px);
+  padding-bottom: calculateRem(var($var, $fallback));
+}
+
+@mixin padding-top($var, $fallback) {
+  padding-top: calc((#{$fallback}) * 1px);
+  padding-top: calculateRem(var($var, $fallback));
+}
+
+@mixin padding-right($var, $fallback) {
+  padding-right: calc((#{$fallback}) * 1px);
+  padding-right: calculateRem(var($var, $fallback));
+}
+
+@mixin padding-left($var, $fallback) {
+  padding-left: calc((#{$fallback}) * 1px);
+  padding-left: calculateRem(var($var, $fallback));
+}
+
+@function pxem($pixel-size, $pixel-context: $t) {
+  @return ($pixel-size / $pixel-context) * 1em;
+}
+
+@mixin remvar($property, $variable, $fallback) {
+  #{$property}: calc(#{$fallback} / #{$t} * 1rem);
+  #{$property}: calculateRem(var($variable, $fallback));
+}
+
+@mixin remRule($property, $value) {
+  #{$property}: calc(#{$value} * 1px);
+  #{$property}: calc(#{$value} / #{$t} * 1rem);
+  #{$property}: calculateRem(#{$value});
+}
+
+// Use css variables with fallbacks.
+@mixin variable($property, $variable, $fallback) {
+  #{$property}: $fallback;
+  #{$property}: var($variable);
+}
